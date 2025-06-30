@@ -31,8 +31,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
-// Add this listener at the top level of your background.js
-// It needs to be defined once and persist throughout the service worker's lifecycle.
 chrome.webNavigation.onCompleted.addListener(async (details) => {
   // Check if the navigation completed in the tab we're actively crawling
   // and if the URL matches the one we're expecting to crawl.
