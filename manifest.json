@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Wiki Crawler",
+  "version": "1.0",
+  "permissions": ["scripting", "activeTab", "tabs", "storage", "webNavigation"],
+  "host_permissions": [ "http://*/*",
+    "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "logo-full.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*",
+    "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
